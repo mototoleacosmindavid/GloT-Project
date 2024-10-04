@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./Front/scss/filter_page_style/filter_page_style.css" />
+  <link rel="stylesheet" href="./Front/scss/pagination.css" />
+  <link rel="stylesheet" href="./Front/scss/dropdownButton.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet" />
+  <title>GloT</title>
+</head>
+
+<body>
+  <div class="navigation-menu">
+    <div class="logo">
+      <a href="./GloT_homepage.html"><img src="./Front/images/logo.png" /></a>
+    </div>
+    <div class="menu">
+      <span class="btn1"><a href="./GloT_homepage.html#despre"></a></span>
+      <span class="btn2"><a href="./GloT_homepage.html#ajutor"></a></span>
+      <span class="btn3"><a href="./GloT_Filter_page.html"></a></span>
+    </div>
+    <div class="icons">
+      <a class="user-icon" href="./GloT_login.html" id="cart"><i class="fa-solid fa-user"></i></a>
+      <div class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
+    </div>
+  </div>
+  <header class="header">
+    <div class="header-top">
+      <div class="mobile-menu">
+        <div>
+          <div class="menu-wrap">
+            <input type="checkbox" class="toggler" />
+            <div class="hamburger">
+              <div></div>
+            </div>
+            <div class="menu">
+              <div>
+                <div>
+                  <ul>
+                    <li>
+                      <a href="./GloT_homepage.html#despre"><i class="fa-solid fa-circle-info"></i>Despre</a>
+                    </li>
+                    <li>
+                      <a href="./GloT_homepage.html#ajutor"><i class="fa-solid fa-handshake-angle"></i>Ajutor</a>
+                    </li>
+                    <li>
+                      <a href="./GloT_Filter_page.html"><i class="fa-solid fa-globe"></i>Statistici</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="logo" href="GloT_homepage.html"><img src="./Front/images/logo.png" /></a>
+      <div class="login">
+        <a class="user-icon" href="./GloT_login.html"><i class="fa-solid fa-user"></i></a>
+        <div class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
+      </div>
+    </div>
+  </header>
+  <section class="filter">
+    <div class="left">
+      <div class="iyear">
+        <div class="title"><i class="fa-solid fa-calendar-days"></i>An</div>
+        <div class="iyear-filters">
+          <select id="selectAn"></select>
+        </div>
+      </div>
+      <div class="country_txt">
+        <div class="title"><i class="fa-solid fa-city"></i>Tara</div>
+        <div class="country_txt-filters">
+          <select id="selectCountry"></select>
+        </div>
+      </div>
+      <div>
+        <div class="title"><i class="fa-solid fa-bomb"></i>Tipul atacului</div>
+        <div class="attacktype1_txt-filters">
+          <select id="selectAttack"></select>
+        </div>
+      </div>
+      <div>
+        <div class="title"><i class="fa-solid fa-bullseye"></i> Tipul tintei</div>
+        <div class="targtype1-filters">
+          <select id="selectTargetType"></select>
+        </div>
+      </div>
+      <div class="nkill">
+        <div class="title"><i class="fa-solid fa-skull"></i> Numarul de victime</div>
+        <div class="nkill-filters">
+          <input type="number" placeholder="Min" id="min-value-nkill">-<input type="number" placeholder="Max"
+            id="max-value-nkill">
+        </div>
+      </div>
+      <div class="nwound">
+        <div class="title"><i class="fa-solid fa-bandage"></i> Numarul de raniti</div>
+        <div class="nwound-filters">
+          <input type="number" placeholder="Min" id="min-value-nwound">-<input type="number" placeholder="Max"
+            id="max-value-nwound">
+        </div>
+      </div>
+      <div class="success">
+        <div class="title"><i class="fa-regular fa-square-check"></i> Succes</div>
+        <div class="success-filters">
+          <input type="checkbox" id="success-box-yes" />
+          <label for="success-box-yes">Da</label>
+          <input type="checkbox" id="success-box-no" />
+          <label for="success-box-no">Nu</label>
+        </div>
+      </div>
+      <div class="suicide">
+        <div class="title"><i class="fa-solid fa-skull-crossbones"></i>Sinucidere</div>
+        <div class="suicide-filters">
+          <input type="checkbox" id="suicide-box-yes" />
+          <label for="suicide-box-yes">Da</label>
+          <input type="checkbox" id="suicide-box-no" />
+          <label for="suicide-box-no">Nu</label>
+        </div>
+      </div>
+      <div>
+        <div class="title"><i class="fa-solid fa-user-group"></i> Numele gruparii</div>
+        <div class="gname-filters">
+          <select id="selectNameGroup"></select>
+        </div>
+      </div>
+    </div>
+    <div id="buttonFilter" class="btn-filter">
+      <button>Filtreaza</button>
+    </div>
+  </section>
+
+  <div class="statictics-maners">
+    <div class="dropdown">
+      <button class="dropbtn">Descarca statisticile</button>
+      <div class="dropdown-content" id="downloadDropdown">
+        <a>CSV</a>
+        <a>PNG a chart-ului de tip box</a>
+        <a>SVG a chart-ului de tip box</a>
+        <a>PNG a chart-ului de tip linear</a>
+        <a>SVG a chart-ului de tip linear</a>
+        <a>PNG a chart-ului de tip radar</a>
+        <a>SVG a chart-ului de tip radar</a>
+      </div>
+    </div>
+    <canvas id="barChart"></canvas>
+    <canvas id="lineChart"></canvas>
+    <canvas id="radarChart"></canvas>
+  </div>
+  <div id="map" ></div>
+  <section id='statictics' class="show cards">
+    <div class="title">
+      <h1>Statistici</h1>
+      <h3 id="results"></h3>
+    </div>
+    <div class="cards-box">
+      <div id="dataContainer">
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="pagination" id="paginationNumbers">
+    </div>
+  </section>
+  <footer>
+    <p>GloT</p>
+    <p class="copy">Copyright &copy;</p>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.js"
+    integrity="sha512-zPMZ/3MBK+R1rv6KcBFcf7rGwLnKS+xtB2OnWkAxgC6anqxlDhl/wMWtDbiYI4rgi/NrCJdXrmNGB8pIq+slJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script type="module" src="/Front/script/FormFilter.js"></script>
+  <script type="module" src="/Front/script/ChartMaker.js"></script>
+  <script type="module" src="/Front/script/MapCreating.js"></script>
+  <script type="module" src="/Front/script/LogOut.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/782bc99ca2.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,577 @@
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Ubuntu";
+  margin: 0;
+}
+
+.header .header-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .header-top .logo {
+  width: 10%;
+  margin: 12px;
+}
+.header .header-top .logo img {
+  width: 100%;
+}
+.header .header-top .mobile-menu {
+  margin: 10px;
+}
+.header .header-top .mobile-menu .menu-wrap {
+  display: block;
+}
+.header .header-top .mobile-menu .menu-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.header .header-top .mobile-menu .toggler {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  width: 60px;
+  height: 60px;
+  z-index: 3;
+  opacity: 0;
+  cursor: pointer;
+}
+.header .header-top .mobile-menu .hamburger {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+.header .header-top .mobile-menu .hamburger > div {
+  position: absolute;
+  width: 60%;
+  height: 5px;
+  border-radius: 1.5px;
+  background-color: red;
+  transition: 0.6s;
+}
+.header .header-top .mobile-menu .hamburger > div:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  border-radius: 1.5px;
+  background-color: red;
+  top: -10px;
+  left: 0;
+  transition: 0.4s;
+}
+.header .header-top .mobile-menu .hamburger > div:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  border-radius: 1.5px;
+  background-color: red;
+  top: 10px;
+  left: 0;
+  transition: 0.4s;
+}
+.header .header-top .mobile-menu .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+.header .header-top .mobile-menu .toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
+}
+.header .header-top .mobile-menu .toggler:checked + .hamburger > div:before,
+.header .header-top .mobile-menu .toggler:checked + .hamburger > div:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+.header .header-top .mobile-menu .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  transition: 0.6s;
+  font-family: "Ubuntu";
+  font-weight: 500;
+}
+.header .header-top .mobile-menu .menu > div {
+  position: absolute;
+  top: 54%;
+  left: 32%;
+  transform: translateX(-150%) translateY(-50%);
+  width: 1600px;
+  height: 1600px;
+  border-radius: 50%;
+  background-color: rgb(160, 41, 41);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transition: 1s;
+  background-repeat: no-repeat;
+}
+.header .header-top .mobile-menu .menu > div > div {
+  max-width: 100vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: 0.6s;
+  margin-top: 32%;
+}
+.header .header-top .mobile-menu .menu > div > div > ul {
+  margin: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.header .header-top .mobile-menu .menu > div > div > ul > li {
+  color: white;
+  text-transform: uppercase;
+  margin: 0.5rem;
+  transition: 0.3s;
+  font-size: 20pt;
+  display: flex;
+  flex-direction: row;
+}
+.header .header-top .mobile-menu .menu > div > div > ul > li a {
+  text-decoration: none;
+  color: inherit;
+}
+.header .header-top .mobile-menu .menu > div > div > ul > li i {
+  margin-right: 10px;
+}
+.header .header-top .mobile-menu .toggler:checked ~ .menu {
+  visibility: visible;
+}
+.header .header-top .mobile-menu .toggler:checked ~ .menu > div {
+  transform: translateX(-50%) translateY(-50%);
+}
+.header .header-top .mobile-menu .toggler:checked ~ .menu > div > div {
+  opacity: 1;
+}
+.header .header-top .login a {
+  font-size: 17pt;
+  color: red;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(160, 41, 41);
+  color: white;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 20px;
+  font-family: "Ubuntu";
+  font-size: 14pt;
+}
+.filter .left {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1;
+}
+.filter .left > div {
+  flex: 0 0 50%;
+  padding: 5px;
+}
+.filter .left input,
+.filter .left select {
+  border-radius: 20px;
+  padding: 5px;
+  border: solid white 5px;
+  background-color: white;
+  font-family: "Ubuntu";
+  font-size: 12pt;
+  margin-bottom: 20px;
+  color: black;
+}
+.filter .left .title {
+  margin-bottom: 10px;
+}
+.filter .left .title i {
+  margin-right: 5px;
+}
+.filter .left #selectNameGroup {
+  width: 100%;
+}
+.filter .btn-filter {
+  margin: auto;
+  width: 50px;
+  padding: 15px;
+}
+.filter .btn-filter button {
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: black;
+  border: solid 5px black;
+  font-family: "Ubuntu";
+  font-size: 12pt;
+  color: white;
+  padding: 3px;
+  cursor: pointer;
+}
+.filter .btn-filter:hover {
+  color: red;
+}
+
+.show {
+  display: none;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(160, 41, 41);
+  margin: 20px;
+}
+.cards .title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.cards .cards-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cards .cards-box #dataContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin: 2%;
+}
+.cards .cards-box #dataContainer .row {
+  display: flex;
+  margin: 10px 0;
+  flex-direction: column;
+}
+.cards .cards-box #dataContainer .row .card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  width: 88%;
+}
+.cards .cards-box #dataContainer .row .card div {
+  margin: 5px;
+}
+.cards .cards-box #dataContainer .row .buttons {
+  border: 2px solid black;
+  padding: 10px;
+}
+.cards .cards-box #dataContainer .row .buttons a {
+  text-decoration: none;
+}
+.cards .cards-box .loadbtn-section {
+  display: flex;
+  justify-content: center;
+  margin: 2%;
+  width: 100%;
+}
+.cards .cards-box .loadbtn-section button {
+  border: 2px solid black;
+  border-radius: 25px;
+  background-color: red;
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 3% 15%;
+  cursor: pointer;
+  font-family: inherit;
+}
+.cards .cards-box .loadbtn-section button:hover {
+  background-color: transparent;
+  color: red;
+}
+.cards .cards-box .btn-download {
+  display: flex;
+  justify-content: center;
+  margin: 2%;
+  width: 90%;
+}
+.cards .cards-box .btn-download a {
+  border: 2px solid blue;
+  border-radius: 25px;
+  background-color: blue;
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 3% 5%;
+  text-decoration: none;
+}
+.cards .cards-box .btn-download a i {
+  padding-left: 10px;
+}
+
+footer {
+  background-color: rgb(61, 27, 27);
+  color: white;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+}
+footer p {
+  width: 100%;
+}
+footer .copy {
+  text-align: right;
+}
+
+.navigation-menu {
+  display: none;
+}
+
+.statictics-maners {
+  margin: auto;
+  width: 100%;
+}
+.statictics-maners canvas {
+  width: 100% !important;
+}
+
+#map {
+  height: 80vh;
+  width: 200vh;
+  position: relative;
+  margin: auto;
+}
+
+@media only screen and (min-width: 953px) {
+  header {
+    display: none;
+  }
+  .navigation-menu {
+    border: 2px solid transparent;
+    display: flex;
+    background-color: rgb(61, 27, 27);
+    justify-content: space-between;
+  }
+  .navigation-menu .logo {
+    width: 20%;
+    padding-top: 1%;
+  }
+  .navigation-menu .logo img {
+    width: 20%;
+    margin: 2px 15px;
+  }
+  .navigation-menu .menu {
+    margin: 20px;
+  }
+  .navigation-menu .menu span {
+    position: relative;
+    display: inline-flex;
+    height: 51px;
+    width: 141px;
+    margin: 0 15px;
+    perspective: 1000px;
+  }
+  .navigation-menu .menu span a {
+    font-size: 19px;
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform 0.25s;
+    text-decoration: none;
+  }
+  .navigation-menu .menu .btn1 a:before,
+  .navigation-menu .menu .btn1 a:after {
+    position: absolute;
+    content: "Despre";
+    height: 51px;
+    width: 141px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid rgb(160, 41, 41);
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 12pt;
+  }
+  .navigation-menu .menu .btn2 a:before,
+  .navigation-menu .menu .btn2 a:after {
+    position: absolute;
+    content: "Ajutor";
+    height: 51px;
+    width: 141px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid rgb(160, 41, 41);
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 12pt;
+  }
+  .navigation-menu .menu .btn3 a:before,
+  .navigation-menu .menu .btn3 a:after {
+    position: absolute;
+    content: "Statistici";
+    text-decoration: none;
+    height: 51px;
+    width: 141px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid rgb(160, 41, 41);
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 12pt;
+  }
+  .navigation-menu .menu span a:before {
+    color: #fff;
+    background: rgb(160, 41, 41);
+    transform: rotateY(0deg) translateZ(25px);
+  }
+  .navigation-menu .menu span a:after {
+    color: rgb(160, 41, 41);
+    transform: rotateX(90deg) translateZ(25px);
+  }
+  .navigation-menu .menu span a:hover {
+    transform: translateZ(-25px) rotateX(-90deg);
+  }
+  .navigation-menu .icons {
+    width: 20%;
+    margin: 20px 0px;
+    text-align: center;
+    padding-top: 1%;
+  }
+  .navigation-menu .icons a, .navigation-menu .icons .logout i {
+    text-decoration: none;
+    margin: 5px;
+    margin-right: 10px;
+    margin-left: 20px;
+    color: rgb(160, 41, 41);
+    position: relative;
+    font-size: 20pt;
+  }
+  .filter {
+    margin: 2% 20%;
+  }
+  .filter .left {
+    justify-content: center;
+  }
+  .filter .left > div {
+    flex: 1 0 45%;
+  }
+  .filter .left .nkill,
+  .filter .left .nwound {
+    margin-bottom: 2%;
+  }
+  .filter .left .nkill input,
+  .filter .left .nwound input {
+    width: 15%;
+    margin: 1%;
+  }
+  .cards .cards-box #dataContainer .row {
+    flex-direction: row;
+  }
+  .cards .cards-box #dataContainer .row .card {
+    width: 22%;
+  }
+  .cards .cards-box .loadbtn-section {
+    width: 40%;
+  }
+  .cards .cards-box .loadbtn-section button {
+    padding: 3% 15%;
+  }
+  .cards .cards-box .btn-download {
+    width: 50%;
+    margin: 1%;
+  }
+  .statictics-maners {
+    margin: auto;
+    width: 100%;
+    background-color: white;
+    margin-bottom: 2%;
+  }
+  .statictics-maners canvas {
+    width: 100% !important;
+  }
+}
+.error-section {
+  margin: 5% 3%;
+  display: flex;
+  flex-direction: column;
+}
+.error-section .left img {
+  width: 100%;
+}
+.error-section .right {
+  margin: 0% 10% 5% 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.error-section .right h1 {
+  font-size: 35pt;
+  color: white;
+  margin-bottom: 0;
+  text-align: center;
+}
+.error-section .right h3 {
+  color: white;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.error-section .right button {
+  border: 2px solid white;
+  background-color: transparent;
+  border-radius: 25px;
+  padding: 12px;
+  text-transform: uppercase;
+  font-family: "Ubuntu";
+  font-weight: bold;
+  color: white;
+  width: 50%;
+  margin: auto;
+}
+.error-section .right button a {
+  text-decoration: none;
+  color: inherit;
+}
+.error-section .right button a i {
+  margin-left: 5px;
+}
+.error-section .right button:hover {
+  background-color: white;
+  color: black;
+}
+
+@media only screen and (min-width: 953px) {
+  .error-section {
+    flex-direction: row;
+  }
+  .error-section .left {
+    width: 50%;
+  }
+  .error-section .right {
+    margin: 5% 2%;
+    width: 50%;
+  }
+  .error-section .right h1, .error-section .right h3 {
+    text-align: left;
+  }
+  .error-section .right button {
+    margin: 0;
+    cursor: pointer;
+  }
+}
+
+/*# sourceMappingURL=404_style.css.map */

@@ -1,0 +1,39 @@
+section {
+    margin: auto;
+}
+
+.pagination {
+    display: inline-block;
+    border-radius: 25px;
+}
+
+.pagination a {
+    background-color: white;
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a:first-child, a:last-child {
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+
+.pagination a.disabled {
+    pointer-events: none;
+    cursor: default;
+    color: #cccccc;
+}
+
+.pagination a.active {
+    background-color: rgb(160, 41, 41);
+    color: white;
+}
+
+/*.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}*/

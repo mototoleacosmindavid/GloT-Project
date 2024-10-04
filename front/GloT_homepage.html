@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./Front/scss/homepage_style/homepage_style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet" />
+  <title>GloT</title>
+</head>
+
+<body>
+  <div class="navigation-menu">
+    <div class="logo">
+      <a href="./GloT_homepage.html"><img src="./Front/images/logo.png" /></a>
+    </div>
+    <div class="menu">
+      <span class="btn1"><a href="./GloT_homepage.html#despre"></a></span>
+      <span class="btn2"><a href="./GloT_homepage.html#ajutor"></a></span>
+      <span class="btn3"><a href="./GloT_Filter_page.html"></a></span>
+    </div>
+    <div class="icons">
+      <a class="user-icon" href="./GloT_login.html" id="cart"><i class="fa-solid fa-user"></i></a>
+      <div class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
+    </div>
+  </div>
+  <header class="header">
+    <div class="header-top">
+      <div class="mobile-menu">
+        <div>
+          <div class="menu-wrap">
+            <input type="checkbox" class="toggler" />
+            <div class="hamburger">
+              <div></div>
+            </div>
+            <div class="menu">
+              <div>
+                <div>
+                  <ul>
+                    <li>
+                      <a href="./GloT_homepage.html#despre"><i class="fa-solid fa-circle-info"></i>Despre</a>
+                    </li>
+                    <li>
+                      <a href="./GloT_homepage.html#ajutor"><i class="fa-solid fa-handshake-angle"></i>Ajutor</a>
+                    </li>
+                    <li>
+                      <a href="./GloT_Filter_page.html"><i class="fa-solid fa-globe"></i>Statistici</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="logo" href="GloT_homepage.html"><img src="./Front/images/logo.png" /></a>
+      <div class="login">
+        <a class="user-icon" href="./GloT_login.html"><i class="fa-solid fa-user"></i></a>
+        <div class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
+      </div>
+    </div>
+  </header>
+  <div class="intro">
+    <div class="image">
+      <img src="./Front/images/homepage/black_n_white.jpg" alt="photo black and white" />
+    </div>
+    <div class="text">
+      <h1 id="textHelloUser"></h1>
+      <h1>GloT: Vizualizarea Terorismului Global</h1>
+      <p>
+        GloT (Global Terrorism Visualiser) este o platformă web inovatoare
+        care oferă o vizualizare flexibilă a datelor privind terorismul la
+        nivel global. Cu ajutorul unui API REST/GraphQL dedicat, utilizatorii
+        pot accesa și analiza statisticile legate de incidentele teroriste din
+        întreaga lume. Platforma oferă cel puțin trei modalități diferite de
+        vizualizare, inclusiv grafice, diagrame și hărți interactive, care pot
+        fi personalizate pentru a evidenția tendințele și modelele specifice.
+      </p>
+    </div>
+  </div>
+  <div class="about-section">
+    <a id="despre" name="despre"></a>
+    <div class="info1">
+      <div class="icon">
+        <i class="fa-solid fa-earth-americas"></i>
+      </div>
+      <div class="title">
+        <h2>Introducere în Terorismul Global</h2>
+      </div>
+      <div class="short-text">
+        <p>Terorismul global reprezintă una dintre cele mai mari amenințări la adresa securității internaționale în
+          prezent.</p>
+      </div>
+    </div>
+    <div class="info2">
+      <div class="icon">
+        <i class="fa-solid fa-bomb"></i>
+      </div>
+      <div class="title">
+        <h2>Impactul Terorismului Global</h2>
+      </div>
+      <div class="short-text">
+        <p>Terorismul poate genera panică și instabilitate într-o comunitate sau o țară și poate submina încrederea în
+          guverne și instituții.</p>
+      </div>
+    </div>
+    <div class="info3">
+      <div class="icon">
+        <i class="fa-solid fa-person"></i>
+      </div>
+      <div class="title">
+        <h2>Combaterea Terorismului Global</h2>
+      </div>
+      <div class="short-text">
+        <p>Combaterea terorismului global necesită o abordare cuprinzătoare și coordonată la nivel internațional.</p>
+      </div>
+    </div>
+  </div>
+  <div class="help-section">
+    <a id="ajutor" name="ajutor"></a>
+    <h2>Daca ai nevoie de ajutor, nu ezita sa ne contactezi</h2>
+    <form class="container">
+      <label for="email"><b>Email</b></label>
+      <input type="email" placeholder="Enter you email" name="email" required>
+      <label for="text"><b>Subject</b></label>
+      <textarea id="text" name="text" rows="4" cols="50"></textarea>
+    </form>
+  </div>
+  <footer>
+    <p>GloT</p>
+    <p class="copy">Copyright &copy;</p>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/782bc99ca2.js" crossorigin="anonymous"></script>
+  <script src="/Front/script/homepage.js"></script>
+  <script type="module" src="/Front/script/LogOut.js"></script>
+</body>
+
+</html>

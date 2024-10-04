@@ -1,0 +1,16 @@
+{
+  "name": "glot",
+  "version": "1.0.0",
+  "description": "Global Terrorism Visualiser",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "json-2-csv": "^5.5.1",
+    "tedious": "^18.2.0"
+  }
+}
